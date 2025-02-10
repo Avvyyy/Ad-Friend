@@ -1,7 +1,7 @@
 /**
- *  I had to create a node server because attempting to
- * fetch the quotes from the API using the browser
- * would result in a CORS error.
+ *  I had to create a node server to fetch the quotes from the local server
+ * Fetching the quotes from the local server is a better option than fetching from the ZenQuotes API
+ * Fetching the json file resulted in a CORS error so I had to create a node server to fetch the quotes
  */
 const http = require("http");
 
