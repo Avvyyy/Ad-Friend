@@ -13,11 +13,11 @@ const server = http.createServer(async (req, res) => {
   res.setHeader("Access-Control-Allow-Origin", "*"); //Beats the CORS error
 
   try {
-    const response = await fetch("https://zenquotes.io/api/random");
+    const response = await fetch("http://127.0.0.1:8080/scripts/quotes.json");
     const data = await response.json();
 
     res.writeHead(200);
-    res.end(JSON.stringify(data[0]));
+    res.end(JSON.stringify(data));
   } catch (error) {
     console.error("Error fetching quotes", error);
     res.writeHead(500);

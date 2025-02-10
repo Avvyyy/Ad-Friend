@@ -11,7 +11,7 @@
     - scripts (Directory)
         - ad.js
         - background.js (controller for the extension based on various browser states)
-        - fetchQuotes.js (backend node source code)
+        - fetchQuotes.js (backend node source code) (was nullified now)
         - popup.js
     
 ## Build Tools
