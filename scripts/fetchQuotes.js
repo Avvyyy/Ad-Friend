@@ -12,8 +12,10 @@ const server = http.createServer(async (req, res) => {
   res.setHeader("Content-Type", "application/json");
   res.setHeader("Access-Control-Allow-Origin", "*"); //Beats the CORS error
 
+
   try {
-    const response = await fetch("http://127.0.0.1:8080/scripts/quotes.json");
+    // Fetch the quotes from the json file: The json file is on github
+    const response = await fetch("https://github.com/Avvyyy/Ad-Friend/quotes.json");
     const data = await response.json();
 
     res.writeHead(200);
