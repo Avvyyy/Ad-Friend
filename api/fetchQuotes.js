@@ -15,7 +15,7 @@ const server = http.createServer(async (req, res) => {
 
   try {
     // Fetch the quotes from the json file: The json file is on github
-    const response = await fetch("https://github.com/Avvyyy/Ad-Friend/quotes.json");
+    const response = await fetch("https://ad-friend.vercel.app/quotes.json");
     const data = await response.json();
 
     res.writeHead(200);
