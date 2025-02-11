@@ -5,8 +5,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     const result = await chrome.storage.local.get("enabled");
     const enabled = result.enabled !== undefined ? result.enabled : false;
     button.innerHTML = enabled
-      ? `<i class="bi bi-toggle-off"></i>Off`
-      : `<i class="bi bi-toggle-on"></i> On`;
+    // Implementation of the toggle button
+      ? ` Off <i class="bi bi-toggle-off" style="font-size: 2em"></i>On`
+      : ` Off <i class="bi bi-toggle-on" style="font-size: 2em"></i>On`;
   };
 
   // Handles the togge effect of the button
