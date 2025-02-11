@@ -18,3 +18,4 @@
 - NodeJs
 - HTML
 - CSS
+- Bootstrap Icons
