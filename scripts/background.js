@@ -11,11 +11,11 @@ chrome.storage.onChanged.addListener((changes, area) => {
 });
 
 // Update the extension icon based on enable/disable state
-// function updateIcon(isEnabled) {
-//     // Change the icons here
-//     const iconPath = isEnabled ? "icons/on.svg" : "icons/off.svg";
-//     chrome.action.setIcon({ path: iconPath });
-// }
+function updateIcon(isEnabled) {
+    // Change the icons here
+    const iconPath = isEnabled ? "icons/on.svg" : "icons/off.svg";
+    chrome.action.setIcon({ path: iconPath });
+}
 
 // Listen for tab updates (when a user navigates to a new page)
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
