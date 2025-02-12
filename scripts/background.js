@@ -4,15 +4,16 @@ chrome.runtime.onInstalled.addListener(() => {
 });
 
 // Listen for storage changes (e.g., enable/disable state)
-// chrome.storage.onChanged.addListener((changes, area) => {
-//     if (area === "local" && "enabled" in changes) {
-//         updateIcon(changes.enabled.newValue);
-//     }
-// });
+chrome.storage.onChanged.addListener((changes, area) => {
+    if (area === "local" && "enabled" in changes) {
+        updateIcon(changes.enabled.newValue);
+    }
+});
 
 // Update the extension icon based on enable/disable state
 // function updateIcon(isEnabled) {
-//     const iconPath = isEnabled ? "icons/on.png" : "icons/off.png";
+//     // Change the icons here
+//     const iconPath = isEnabled ? "icons/on.svg" : "icons/off.svg";
 //     chrome.action.setIcon({ path: iconPath });
 // }
 

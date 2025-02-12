@@ -3,7 +3,7 @@
 
 async function fetchMotivationalQuote() {
   try {
-    const response = await fetch("http://127.0.0.1:3000");
+    const response = await fetch("https://ad-friend.vercel.app//api/fetchQuotes");
     const data = await response.json();
 
     const quoteNumber = Math.floor(Math.random() * data.length);
