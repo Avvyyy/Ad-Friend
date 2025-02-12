@@ -2,19 +2,20 @@ document.addEventListener("DOMContentLoaded", async () => {
   const button = document.querySelector(".toggleButton");
 
   const updateButtonState = async () => {
-    const result = await chrome.storage.local.get("enabled");
-    const enabled = result.enabled !== undefined ? result.enabled : false;
+    const { enabled } = await chrome.storage.local.get("enabled");
     button.innerHTML = enabled
-    // Implementation of the toggle button
-      ? ` Off <i class="bi bi-toggle-on" style="font-size: 2em"></i>On`
-      : ` Off <i class="bi bi-toggle-off" style="font-size: 2em"></i>On`;
+      ? ` On <i class="bi bi-toggle-on" style="font-size: 2em"></i>`
+      : ` Off <i class="bi bi-toggle-off" style="font-size: 2em"></i>`;
   };
 
-  // Handles the togge effect of the button
   const handleClick = async () => {
-    const result = await chrome.storage.local.get("enabled");
-    const enabled = result.enabled !== undefined ? result.enabled : false;
-    await chrome.storage.local.set({ enabled: !enabled });
+    const { enabled } = await chrome.storage.local.get("enabled");
+    const newState = !enabled;
+    await chrome.storage.local.set({ enabled: newState });
+
+    // Notify the background script
+    chrome.runtime.sendMessage({ action: "toggleExtension", enabled: newState });
+
     updateButtonState();
   };
 
